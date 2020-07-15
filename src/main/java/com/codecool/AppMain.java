@@ -13,7 +13,8 @@ public class AppMain {
     public static void main(String[] args) throws IOException {
         setFilePath();
 
-        FilePartReader filePartReader = new FilePartReader(filePath, fromLine, toLine);
+        FilePartReader filePartReader = new FilePartReader();
+        filePartReader.setup(filePath, fromLine, toLine);
         FileWordAnalyzer fileWordAnalyzer = new FileWordAnalyzer(filePartReader);
 
         System.out.println("WORDS ORDERED ALPHABETICALLY:\n" + fileWordAnalyzer.getWordsOrderedAlphabetically() + "\n\n");
@@ -23,6 +24,6 @@ public class AppMain {
 
     public static void setFilePath() {
         Path currentDir = Paths.get(".");
-        filePath = currentDir.toAbsolutePath().toString() + "\\src\\main\\resources\\testFile.txt";
+        filePath = currentDir.toAbsolutePath().toString() + "\\src\\main\\resources\\file.txt";
     }
 }

@@ -10,10 +10,6 @@ public class FilePartReader {
     private int toLine;
     private int fromLine;
 
-    public FilePartReader(String filePath, int fromLine, int toLine) {
-        setup(filePath, fromLine, toLine);
-    }
-
     public void setup(String filePath, int fromLine, int toLine) {
         if (toLine < fromLine || fromLine < 1) throw new IllegalArgumentException("toLine cannot be smaller than fromLine and fromLine cannot be smaller than 1");
         this.filePath = filePath;
