@@ -22,7 +22,7 @@ public class FilePartReader {
         Scanner scanner = new Scanner(file);
         StringBuilder stringBuilder = new StringBuilder();
         while (scanner.hasNextLine()) {
-            stringBuilder.append(scanner.nextLine()).append("\n");
+            stringBuilder.append(scanner.nextLine()).append(" \n");
         }
         return stringBuilder.toString();
     }

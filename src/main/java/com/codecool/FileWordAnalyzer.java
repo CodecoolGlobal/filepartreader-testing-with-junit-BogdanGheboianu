@@ -37,7 +37,11 @@ public class FileWordAnalyzer {
     private List<String> cleanUpWordsList(List<String> wordsList) {
         List<String> cleanWordsList = new ArrayList<>();
         for (int i = 0; i < wordsList.size(); i++) {
-            cleanWordsList.add(wordsList.get(i).toLowerCase().replace(".", ""));
+            cleanWordsList.add(wordsList.get(i)
+                            .replace("\n", "")
+                            .replace(".", "")
+                            .toLowerCase());
+
         }
         return cleanWordsList;
     }
